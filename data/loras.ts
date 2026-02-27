@@ -3,11 +3,9 @@ import ColoredSketch from "@/public/lora-images/colored-sketch.png";
 import FluxMidJourney from "@/public/lora-images/flux-midjourney.png";
 import Icons from "@/public/lora-images/icons.png";
 import LogoDesign from "@/public/lora-images/logo-design.png";
-import OutfitGenerator from "@/public/lora-images/outfit-generator.png";
+import LongToon from "@/public/lora-images/long-toon.jpg";
 import PencilSketch from "@/public/lora-images/pencil-sketch.png";
-import SimpleSketch from "@/public/lora-images/simple-sketch.png";
 import TarotCard from "@/public/lora-images/tarot-card.png";
-import VectorSketch from "@/public/lora-images/vector-sketch.png";
 import { StaticImageData } from "next/image";
 
 export type Lora = {
@@ -161,25 +159,34 @@ export const LORAS: Lora[] = [
   // },
   {
     id: 3,
-    name: "Vector Sketch",
-    model: "vector-illustration",
+    name: "Long Toon",
+    model: "Flux-Long-Toon-LoRA",
     description:
-      "Generates smooth, scalable vector-style sketches ideal for digital designs.",
-    url: "https://huggingface.co/mujibanget/vector-illustration",
-    image: VectorSketch,
-    path: "https://huggingface.co/mujibanget/vector-illustration",
-    applyTrigger: (prompt) =>
-      `${prompt}, vector illustration with mujibvector style, isolated in a white background`,
+      "Generates elongated cartoon-style images with vibrant colors.",
+    url: "https://huggingface.co/prithivMLmods/Flux-Long-Toon-LoRA",
+    image: LongToon,
+    path: "https://huggingface.co/prithivMLmods/Flux-Long-Toon-LoRA",
+    applyTrigger: (prompt) => `Long toons, ${prompt}`,
     refinement: false,
     scale: 1,
     steps: 28,
+    height: 768,
+    width: 1024,
     suggestions: [
-      { label: "Dog", prompt: "cute dog" },
-      { label: "Flower", prompt: "a rose" },
-      { label: "Lamp", prompt: "a vintage lamp" },
+      {
+        label: "Cartoon character",
+        prompt: "a cartoon character with a hoodie",
+      },
+      {
+        label: "Soccer player",
+        prompt: "a soccer player in uniform",
+      },
+      {
+        label: "Mario figurine",
+        prompt: "Mario on a beach",
+      },
     ],
   },
-
   {
     id: 1,
     name: "Colored Sketch",

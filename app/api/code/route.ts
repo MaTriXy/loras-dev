@@ -16,7 +16,7 @@ export async function POST(request: Request) {
 
     const client = new Together();
     
-    const image = await client.images.create({
+    const image = await client.images.generate({
       prompt: \"${json.prompt}\",
       model: "black-forest-labs/FLUX.1-dev-lora",
       height: ${lora.height ?? 768},

@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 
-export async function middleware(req: NextRequest) {
+export async function proxy(req: NextRequest) {
   const country = req.headers.get("X-Vercel-IP-Country");
   // Temporarily blocking traffic from Russia since I have too many requests from there.
   if (country === "RU") {
@@ -11,7 +11,7 @@ export async function middleware(req: NextRequest) {
   return NextResponse.next();
 }
 
-// Optionally, specify paths to apply the middleware
+// Optionally, specify paths to apply the proxy
 export const config = {
   matcher: "/:path*", // Apply to all routes
 };

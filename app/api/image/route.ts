@@ -75,7 +75,7 @@ export async function POST(req: Request) {
 
   let response;
   try {
-    response = await client.images.create({
+    response = await client.images.generate({
       prompt: refinedPrompt,
       model: "black-forest-labs/FLUX.1-dev-lora",
       height: selectedLora.height ?? 768,
@@ -135,7 +135,7 @@ async function refinePrompt({
 
   try {
     let res = await client.chat.completions.create({
-      model: "meta-llama/Meta-Llama-3.1-8B-Instruct-Turbo",
+      model: "Qwen/Qwen2.5-7B-Instruct-Turbo",
       messages: [
         {
           role: "system",
