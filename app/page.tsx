@@ -89,6 +89,38 @@ export default function Home() {
 
   return (
     <div className="h-full">
+      <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 backdrop-blur-sm p-4">
+        <div className="w-full max-w-md rounded-xl bg-white px-6 py-8 shadow-xl text-center sm:px-8 sm:py-10">
+          <h2 className="text-2xl font-semibold tracking-tight text-gray-900 sm:text-3xl">
+            We&apos;ll be back soon
+          </h2>
+          <p className="mt-4 text-sm leading-relaxed text-gray-600 sm:text-base">
+            We&apos;re currently working on fixing this site. In the meantime,
+            feel free to check out our other image demos:
+          </p>
+          <div className="mt-6 flex flex-col gap-3 sm:flex-row sm:justify-center">
+            <a
+              href="https://blinkshot.io"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center justify-center gap-1.5 rounded-lg bg-cyan-600 px-5 py-2.5 text-sm font-medium text-white shadow hover:bg-cyan-700 transition"
+            >
+              BlinkShot.io
+              <ArrowUpRightIcon className="size-3.5" />
+            </a>
+            <a
+              href="https://together.ai/demos"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center justify-center gap-1.5 rounded-lg border border-gray-300 bg-white px-5 py-2.5 text-sm font-medium text-gray-700 shadow-sm hover:bg-gray-50 transition"
+            >
+              All Demo Apps
+              <ArrowUpRightIcon className="size-3.5" />
+            </a>
+          </div>
+        </div>
+      </div>
+
       <form
         className="h-full"
         action={() => {
