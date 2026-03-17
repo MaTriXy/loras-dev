@@ -74,27 +74,27 @@ export async function POST(request: Request) {
   });
 }
 
-async function javascript(strings: TemplateStringsArray, ...values: any[]) {
+async function javascript(strings: TemplateStringsArray, ...values: unknown[]) {
   const string = extract(strings, ...values);
   return generateCode(string, "javascript");
 }
 
-async function python(strings: TemplateStringsArray, ...values: any[]) {
+async function python(strings: TemplateStringsArray, ...values: unknown[]) {
   const string = extract(strings, ...values);
   return generateCode(string, "python");
 }
 
-async function shell(strings: TemplateStringsArray, ...values: any[]) {
+async function shell(strings: TemplateStringsArray, ...values: unknown[]) {
   const string = extract(strings, ...values);
   return generateCode(string, "shell");
 }
 
-async function text(strings: TemplateStringsArray, ...values: any[]) {
+async function text(strings: TemplateStringsArray, ...values: unknown[]) {
   const string = extract(strings, ...values);
   return generateCode(string, "text");
 }
 
-function extract(strings: TemplateStringsArray, ...values: any[]) {
+function extract(strings: TemplateStringsArray, ...values: unknown[]) {
   return strings.reduce((result, string, i) => {
     return result + (values[i - 1] || "") + string;
   });

@@ -474,7 +474,7 @@ function ShowCodeButton({
       <DialogContent>
         <DialogTitle>Code sample</DialogTitle>
         <DialogDescription>
-          Code used to generate "{submittedPrompt}"
+          Code used to generate &ldquo;{submittedPrompt}&rdquo;
         </DialogDescription>
         {isFetching ? (
           <Spinner />
@@ -524,7 +524,7 @@ function ShowCodeButton({
               />
 
               <p>
-                That's it! You should see the URL of your image printed on the
+                That&apos;s it! You should see the URL of your image printed on the
                 screen.
               </p>
             </div>
